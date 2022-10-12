@@ -24,7 +24,7 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://localhost/sateg/sistema-puntos/public/';
+    public $baseURL = 'http://localhost/sateg/sistema-de-puntos/public/';
 
     /**
      * --------------------------------------------------------------------------
