@@ -10,7 +10,8 @@ class Admin extends Controller
     {
         $data = array();
         $footer = view('elements/footer');
-        $data = array('data' => '', 'elements' => $footer);
+        $header = view('elements/header');
+        $data = array('data' => '', 'footer' => $footer, 'header' => $header);
         return view('admin/puntaje.php', $data);
     }
 }

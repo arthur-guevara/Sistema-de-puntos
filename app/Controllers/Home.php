@@ -8,7 +8,8 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('index');
+        $mensaje = session('msg');
+        return view('index', ['mensaje' => $mensaje]);
     }
 
     public function  login()
@@ -20,29 +21,31 @@ class Home extends BaseController
         $response = $Usuarios->obtenerUsuario(array('usuario' => $user));
 
         if (count($response) == 0) {
-            return redirect()->to(base_url('/'))->with('status', '0');
+            return redirect()->to(base_url('/'))->with('msg', 'Usuario no encontrado');
         }
 
-        if (password_verify($password, $response[0]['password'])) {
-            switch ($response[0]['rol']) {
-                case '1':
-                    $url = 'admin';
-                    break;
-
-                case '2':
-                    $url = 'players';
-                    break;
-            }
+        if ($password != $response[0]['pass']) {
+            return redirect()->to(base_url('/'))->with('msg', 'Contraseña incorrecta');
         }
 
+        $response[0]['id_rol'] == 1 ? $url = 'admin' :  $url = 'player';
         $info = array(
-            'id' => $response[0]['id'],
-            'name' => $response[0]['user'] . ' ' . $response[0]['apaterno'] 
+            'id' => $response[0]['id_usuario'],
+            'type' => $response[0]['id_rol'],
+            'name' => $response[0]['nombre'] . ' ' . $response[0]['apaterno'] . ' ' . $response[0]['amaterno']
         );
 
         $session = session();
         $session->set($info);
         return redirect()->to(base_url($url))->with('status', '1');
+    }
 
+    public function logout()
+    {
+        $session = session();
+        $session->destroy();
+        return redirect()
+            ->to(base_url('/'))
+            ->with('msg', 'Sesion cerrada correctamente');
     }
 }

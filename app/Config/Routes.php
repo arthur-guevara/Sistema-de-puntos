@@ -2,6 +2,8 @@
 
 namespace Config;
 
+use App\Controllers\Home;
+
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
 
@@ -35,8 +37,11 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-$routes->get('admin', 'Admin::dashboard');
+$routes->get('/', 'Home::index', ['filter' => 'AdminSession']);
+$routes->get('admin', 'Admin::dashboard', ['filter' => 'AdminSession']);
+$routes->post('login', 'Home::login');
+$routes->get('logout', 'Home::logout');
+$routes->get('player', 'Player::home');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
