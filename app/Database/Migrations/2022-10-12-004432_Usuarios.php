@@ -41,6 +41,12 @@ class Usuarios extends Migration
                 'constraint' => '250',
                 'null'       => true
             ],
+            'adscripcion' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '250',
+                'null'       => true,
+                'default'    => 'León'
+            ],
             'id_rol' => [
                 'type'           => 'INT',
                 'constraint'     => 5,

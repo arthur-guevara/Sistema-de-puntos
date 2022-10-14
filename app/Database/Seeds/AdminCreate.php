@@ -13,7 +13,7 @@ class AdminCreate extends Seeder
                 'id_usuario' => '',
                 'usuario'    => 'admin',
                 'pass'       => 'admin',
-                'nombre'     => '',
+                'nombre'     => 'Administrador',
                 'apaterno'   => '',
                 'amaterno'   => '',
                 'id_rol'     => '1'

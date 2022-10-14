@@ -5,8 +5,8 @@
                 <div class="col-sm-4 offset-md-1 py-4">
                     <h4 class="text-white"><span><i class="fa-solid fa-list-check"></i></span> Acciones</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white"><span><i class="fa-solid fa-star"></i></span> Puntajes</a></li>
-                        <li><a href="#" class="text-white"><span><i class="fa-solid fa-users"></i></span> Usuarios</a></li>
+                        <li><a href="<?= base_url('admin/score') ?>" class="text-white"><span><i class="fa-solid fa-star"></i></span> Puntajes</a></li>
+                        <li><a href="<?= base_url('admin/players') ?>" class="text-white"><span><i class="fa-solid fa-users"></i></span> Usuarios</a></li>
                         <li><a href="<?= base_url('logout') ?>" class="text-white"><span><i class="fa-solid fa-right-from-bracket"></i></span> Cerrar Sesión</a></li>
                     </ul>
                 </div>

@@ -28,7 +28,7 @@ class Home extends BaseController
             return redirect()->to(base_url('/'))->with('msg', 'Contraseña incorrecta');
         }
 
-        $response[0]['id_rol'] == 1 ? $url = 'admin' :  $url = 'player';
+        $response[0]['id_rol'] == 1 ? $url = 'admin/score' :  $url = 'player';
         $info = array(
             'id' => $response[0]['id_usuario'],
             'type' => $response[0]['id_rol'],

@@ -41,3 +41,7 @@ function getScore(id) {
         "json"
     );
 }
+
+function renderTable(id, optn) {
+    let table = new DataTable(`#${id}`, optn);
+}

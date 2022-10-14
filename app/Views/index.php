@@ -8,6 +8,7 @@
     <link href="<?= base_url('bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
     <meta name="theme-color" content="#712cf9">
     <link href=" <?= base_url('bootstrap/css/login.css') ?>" rel="stylesheet">
+    <link rel="shortcut icon" href="<?= base_url('img/favicon.png')?>">
 </head>
 
 <body class="text-center">

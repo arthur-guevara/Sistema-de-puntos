@@ -12,7 +12,7 @@
 
 <body>
     <nav class="navbar navbar-expand navbar-dark " style="background-color: #3B3B3B;">
-        <div class="container-fluid">
+        <div class="container-fluid justify-content-end">
             <ul class="nav navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="<?= base_url('logout') ?>">
@@ -51,7 +51,7 @@
             </div>
         </div>
     </main>
-
+    
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="<?= base_url('bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />

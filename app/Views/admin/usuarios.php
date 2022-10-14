@@ -23,22 +23,27 @@
                     <table id="puntuacion" class="table table-striped table-hover">
                         <thead>
                             <tr>
-                                <td>Posicion</td>
-                                <td>Jugador</td>
-                                <td>Puntos</td>
+                                <td>ID</td>
+                                <td>Nombre(s)</td>
+                                <td>Paterno</td>
+                                <td>Materno</td>
+                                <td>Usuario</td>
+                                <td>Contraseña</td>
+                                <td>Adscripción</td>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
-                            $c = 1;
-                            foreach ($data as $d) : ?>
+                            <?php foreach ($data as $d) : ?>
                                 <tr>
-                                    <td><?= $c ?></td>
-                                    <td><?= $d['jugador'] ?></td>
-                                    <td><?= $d['puntos'] ?></td>
+                                    <td><?= $d['id_usuario'] ?></td>
+                                    <td><?= $d['nombre'] ?></td>
+                                    <td><?= $d['apaterno'] ?></td>
+                                    <td><?= $d['amaterno'] ?></td>
+                                    <td><?= $d['usuario'] ?></td>
+                                    <td><?= $d['pass'] ?></td>
+                                    <td><?= $d['adscripcion'] ?></td>
                                 </tr>
-                            <?php $c++;
-                            endforeach ?>
+                            <?php endforeach ?>
                         </tbody>
                     </table>
                 </div>
@@ -47,18 +52,20 @@
     </main>
     <?= $footer ?>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
     <script src="<?= base_url('bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
     <script src="<?= base_url('js/functions.js') ?>"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <script>
-           let opt = {
+        let opt = {
+            "scrollX": true,
             language: {
                 url: "https://cdn.datatables.net/plug-ins/1.11.3/i18n/es_es.json",
                 responsive: true
             }
         }
-        renderTable('puntuacion',opt);
+        renderTable('puntuacion', opt);
     </script>
 </body>
 
