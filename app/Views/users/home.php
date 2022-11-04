@@ -39,7 +39,9 @@
                 Mis puntos
             </div>
             <div class="card-body">
-                <h1 class="card-title" id="points">300</h1>
+                <h1 class="card-title" id="points"><?= $score[0]['puntos'] ?></h1>
+                <input type="hidden" id="id_jugador" value="<?= session('id') ?>">
+                <input type="hidden" id="route" value="<?= base_url('/player/add')?>">
             </div>
             <div class="card-footer text-muted">
                 <button class="btn btn-primary" onclick="leerQR();">Escanea!</button>

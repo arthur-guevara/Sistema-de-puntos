@@ -29,4 +29,24 @@ class Usuarios extends Model
         $builder->orderBy('puntaje.puntos', 'DESC');
         return $builder->get()->getResultArray();
     }
+
+    public function obtenerPuntosJugador($id){
+        $builder = $this->db->table('puntaje');
+        $builder->where('id_usuario', $id);
+        return $builder->get()->getResultArray();
+    }
+
+    public function sumarPuntos($id, $puntos){
+        $builder = $this->db->table('puntaje');
+        $builder->where('id_usuario', $id);
+        if($builder->countAll() == 0){
+           $builder->set('puntos', $puntos);
+           $builder->where('id_usuario', $id);
+           return $this->db->affectedRows(); 
+        }
+        $builder->set('puntos', $puntos);
+        $builder->where('id_usuario', $id);
+        $builder->update();
+        return $this->db->affectedRows(); 
+    }
 }

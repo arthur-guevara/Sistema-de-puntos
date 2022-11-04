@@ -43,6 +43,7 @@ $routes->get('admin/players', 'Admin::playersAdmin', ['filter' => 'AdminSession'
 $routes->post('login', 'Home::login');
 $routes->get('logout', 'Home::logout');
 $routes->get('player', 'Player::home');
+$routes->get('player/add', 'Player::sumarPuntos');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
